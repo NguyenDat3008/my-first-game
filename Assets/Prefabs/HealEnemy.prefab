@@ -208,7 +208,7 @@ MonoBehaviour:
   HealthBar: {fileID: 1487252542063135006}
   enterDamage: 5
   stayDamage: 1
-  healAmount: 20
+  heartObject: {fileID: 4566443587019268651, guid: 8dd9360b107f00747ade748e0e10f179, type: 3}
 --- !u!1 &6390473313300340633
 GameObject:
   m_ObjectHideFlags: 0

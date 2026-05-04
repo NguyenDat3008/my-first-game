@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealEnemy : Enemy
 {
-    [SerializeField] private float healAmount = 20f;
+    [SerializeField] private GameObject heartObject;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -22,16 +22,12 @@ public class HealEnemy : Enemy
         }
     }
 
-    private void HealPlayer()
-    {
-        if (player != null)
-        {
-            player.Heal(healAmount);
-        }
-    }
     protected override void Die()
     {
+        if (heartObject != null)
+        {
+            GameObject heart = Instantiate(heartObject, transform.position, Quaternion.identity);
+        }
         base.Die();
-        HealPlayer();
     }
 }
